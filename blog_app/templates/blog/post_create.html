@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Create post{% endblock %}
+
+{% block content %}
+    <h2>Create post</h2>
+    <div>{{ form }}</div>
+    <p></p>
+    <a href="{% url 'home' %}">Publish</a>
+    <a href="{% url 'home' %}">Back to All Posts</a>
+{% endblock %}

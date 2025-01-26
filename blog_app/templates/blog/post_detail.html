@@ -4,7 +4,24 @@
 
 {% block content %}
     <h2>{{ post.title }}</h2>
-    <p>by {{ post.author }} on {{ post.created_at }}</p>
     <div>{{ post.content }}</div>
+    <p>by {{ post.author }} on {{ post.created_at }}</p>
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <p>{{ comment.content }}</p>
+                <p>by {{ comment.author }} on {{ comment.created_at }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add a Comment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+
     <a href="{% url 'home' %}">Back to All Posts</a>
 {% endblock %}
