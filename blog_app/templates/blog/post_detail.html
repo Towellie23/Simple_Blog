@@ -6,22 +6,62 @@
     <h2>{{ post.title }}</h2>
     <div>{{ post.content }}</div>
     <p>by {{ post.author }} on {{ post.created_at }}</p>
+    <p>Debug: Post ID is {{ post.id }}</p>
+
+    {% if user == post.author %}
+        <a href="{% url 'post_edit' post.id %}">Edit</a>
+        <a href="{% url 'post_delete' post.id %}">Delete</a>
+    {% endif %}
+
     <h3>Comments</h3>
     <ul>
         {% for comment in comments %}
             <li>
                 <p>{{ comment.content }}</p>
                 <p>by {{ comment.author }} on {{ comment.created_at }}</p>
+                {% if user.is_authenticated %}
+                    <a href="#" class="reply-link" data-comment-id="{{ comment.id }}">Reply</a>
+                    <form method="post" class="reply-form" data-comment-id="{{ comment.id }}" style="display: none;">
+                        {% csrf_token %}
+                        {{ comment_form.as_p }}
+                        <input type="hidden" name="parent" value="{{ comment.id }}">
+                        <button type="submit">Reply</button>
+                    </form>
+                {% endif %}
+                {% for reply in comment.replies.all %}
+                    <ul>
+                        <li>
+                            <p>{{ reply.content }}</p>
+                            <p>by {{ reply.author }} on {{ reply.created_at }}</p>
+                        </li>
+                    </ul>
+                {% endfor %}
             </li>
         {% endfor %}
     </ul>
 
     <h3>Add a Comment</h3>
-    <form method="post">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit">Add Comment</button>
-    </form>
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.content }}  <!-- Отображаем только поле content -->
+            <input type="hidden" name="parent" value="">  <!-- Скрытое поле parent -->
+            <button type="submit" name="comment_form">Add Comment</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Авторизуйтесь, чтобы оставить комментарий</a>
+    {% endif %}
+
+    <h3>Rate this Post</h3>
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ rating_form.as_p }}
+            <button type="submit" name="rating_form">Rate</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Авторизуйтесь, чтобы оценить статью</a>
+    {% endif %}
 
     <a href="{% url 'home' %}">Back to All Posts</a>
 {% endblock %}
