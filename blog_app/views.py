@@ -4,6 +4,7 @@ from .forms import PostForm, CommentForm, UserRegisterForm, RatingForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
 def register(request):
     if request.method == 'POST':
@@ -47,11 +48,14 @@ def post_detail(request, id):
                 rating.save()
                 return redirect('post_detail', id=post.id)
 
+    average_rating = post.ratings.aggregate(Avg('score'))['score__avg']
+
     return render(request, 'blog/post_detail.html', {
         'post': post,
         'comment_form': comment_form,
         'comments': comments,
-        'rating_form': rating_form
+        'rating_form': rating_form,
+        'average_rating': average_rating,
     })
 
 @login_required
@@ -88,7 +92,7 @@ def post_edit(request, id):
         form = PostForm(instance=post)
 
     # Передаем форму и пост в контекст шаблона
-    return render(request, 'blog/post_edit.html', {'form': form, 'post': post})
+    return render(request, 'blog/post_form.html', {'form': form, 'post': post})
 
 
 def about(request):

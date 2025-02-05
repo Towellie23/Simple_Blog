@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07fee1bf-b0f5-4665-a27c-21e0346bb1b3" name="Changes" comment="Add comment form and opportunity to create comments">
-      <change afterPath="$PROJECT_DIR$/blog_app/templates/blog/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_app/templates/blog/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/blog_app/main.js" afterDir="false" />
+    <list default="true" id="07fee1bf-b0f5-4665-a27c-21e0346bb1b3" name="Changes" comment="I have an issue. My create_post page doesn't work. I don't know how to fix it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_app/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_app/templates/blog/post_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog/post_listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog/post_listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog_config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_config/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +96,12 @@
       <workItem from="1738067762359" duration="4550000" />
       <workItem from="1738083505065" duration="1093000" />
       <workItem from="1738579482964" duration="5853000" />
-      <workItem from="1738612585222" duration="5589000" />
+      <workItem from="1738612585222" duration="5959000" />
+      <workItem from="1738646943725" duration="491000" />
+      <workItem from="1738647727969" duration="25000" />
+      <workItem from="1738671173651" duration="20000" />
+      <workItem from="1738671504131" duration="2312000" />
+      <workItem from="1738785311951" duration="2341000" />
     </task>
     <task id="LOCAL-00001" summary="Add first project files">
       <option name="closed" value="true" />
@@ -134,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737926458319</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="I have an issue. My create_post page doesn't work. I don't know how to fix it">
+      <option name="closed" value="true" />
+      <created>1738618477695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738618477696</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +145,7 @@
     <MESSAGE value="Add first project files" />
     <MESSAGE value="Add views and first post" />
     <MESSAGE value="Add comment form and opportunity to create comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comment form and opportunity to create comments" />
+    <MESSAGE value="I have an issue. My create_post page doesn't work. I don't know how to fix it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I have an issue. My create_post page doesn't work. I don't know how to fix it" />
   </component>
 </project>

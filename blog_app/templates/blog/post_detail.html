@@ -6,11 +6,18 @@
     <h2>{{ post.title }}</h2>
     <div>{{ post.content }}</div>
     <p>by {{ post.author }} on {{ post.created_at }}</p>
-    <p>Debug: Post ID is {{ post.id }}</p>
 
     {% if user == post.author %}
         <a href="{% url 'post_edit' post.id %}">Edit</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
+    {% endif %}
+
+    <!-- Отображение средней оценки поста -->
+    <h3>Average Rating</h3>
+    {% if average_rating %}
+        <p>{{ average_rating|floatformat:1 }} / 10</p>
+    {% else %}
+        <p>Пост еще не оценивался.</p>
     {% endif %}
 
     <h3>Comments</h3>

@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 class Post(models.Model):
@@ -24,4 +25,4 @@ class Comment(models.Model):
 class Rating(models.Model):
     post = models.ForeignKey(Post, related_name='ratings', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    score = models.IntegerField(default=0)
+    score = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
