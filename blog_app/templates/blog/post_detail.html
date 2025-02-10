@@ -7,7 +7,7 @@
     <div>{{ post.content }}</div>
     <p>by {{ post.author }} on {{ post.created_at }}</p>
 
-    {% if user == post.author %}
+    {% if user == post.author or user.is_superuser%}
         <a href="{% url 'post_edit' post.id %}">Edit</a>
         <a href="{% url 'post_delete' post.id %}">Delete</a>
     {% endif %}

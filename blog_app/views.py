@@ -78,7 +78,7 @@ def post_edit(request, id):
     post = get_object_or_404(Post, id=id)
 
     # Проверяем, что текущий пользователь является автором поста
-    if request.user != post.author:
+    if request.user != post.author and not request.user.is_superuser:
         return redirect('home')
 
     # Обработка POST-запроса (отправка формы)
@@ -101,7 +101,7 @@ def about(request):
 @login_required
 def post_delete(request, id):
     post = get_object_or_404(Post, id=id)
-    if request.user != post.author:
+    if request.user != post.author and not request.user.is_superuser:
         return redirect('home')
     if request.method == 'POST':
         post.delete()

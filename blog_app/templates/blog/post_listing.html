@@ -9,7 +9,6 @@
             <li>
                 <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
                 <p>by {{ post.author }} on {{ post.created_at }}</p>
-                <p>ID: {{ post.id }}</p>  <!-- Отладочная информация -->
             </li>
         {% empty %}
             <li>Нет постов для отображения.</li>
